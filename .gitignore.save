@@ -1,0 +1,6 @@
+.venv/
+git rm -r --cache.venv
+git add .
+git comit -m"Initial comment"
+
+

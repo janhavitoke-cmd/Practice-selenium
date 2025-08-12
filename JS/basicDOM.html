@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+    <head> </head>
+    <body>
+        <h1 id = "demo">This is a text</h1>
+        <button onclick="changeText()"> Change Text </button>
+        <script>
+            function changeText(){
+                let element = document.getElementById("demo");
+                element.textContent = "Text Changed by JS!"
+            }
+        </script>
+    </body>
+</html>

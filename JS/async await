@@ -1,0 +1,63 @@
+//async await
+//async
+async function Fname() {
+    return "Data fetch successfully"
+}
+Fname().then((txt)=>console.log(txt));
+
+
+
+//for name parameter
+async function fname(name){
+    return `data return for name : ${name}`
+}
+fname("Janhavi").then((txt)=>console.log(txt));
+
+
+
+
+//async with await
+
+async function greet(name){
+    return `good morning ${name}`
+}
+async function Greet2(){
+    const msg = await greet("Janhavi");
+    console.log(msg)
+}
+Greet2();
+
+
+
+// example.js
+
+// A simple async function that simulates a delay using setTimeout
+function wait(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function showMessage() {
+  console.log(" Waiting...");
+  await wait(2000); // Wait 2 seconds
+  console.log(" Hello from async/await after 2 seconds!");
+}
+
+// Call the async function
+showMessage();
+
+
+//async await
+async function Greet() {
+  try {
+    const result = "Have a good day!";  // No need to await a string
+    console.log(result);
+  } catch (error) {
+    console.log("Error:", error);
+  }
+}
+
+Greet();  // Call the function so it runs
+
+
+
+//
