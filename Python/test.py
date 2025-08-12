@@ -15,8 +15,6 @@ driver.find_element(By.ID,"pass").send_keys("122121")
 
 driver.find_element(By.NAME,"Login").click()
 
-'''
-gtfrdtfygh
-'''
+
 time.sleep(6)
 driver.quit()
