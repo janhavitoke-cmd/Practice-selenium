@@ -18,7 +18,7 @@ firstname = fake.first_name()
 lastname =  fake.last_name()
 email = fake.email()
 phone = str(fake.random_number(digits=10, fix_len=True))
-password = fake.password(length=10, special_chars=True, digits=True, upper_case=True, lower_case=True)
+password = fake.password(length=12, special_chars=True, digits=True, upper_case=True, lower_case=True)
 confpass = password
 
 wait = WebDriverWait(driver,20)
@@ -48,7 +48,7 @@ wait.until(EC.element_to_be_clickable((By.XPATH, "//a[text()='Login here']"))).c
 
 wait.until(EC.visibility_of_element_located((By.XPATH, "//input[@id='userEmail']")))
 
-time.sleep(2)
+time.sleep(5)
 
 # Fill login form
 driver.find_element(By.XPATH, "//input[@id='userEmail']").send_keys(email)
@@ -56,9 +56,9 @@ driver.find_element(By.XPATH, "//input[@id='userPassword']").send_keys(password)
 
 # Click login button
 wait.until(EC.element_to_be_clickable((By.ID, "login"))).click()
+driver.refresh()
 
 time.sleep(20)
-
 
 driver.quit()
 
