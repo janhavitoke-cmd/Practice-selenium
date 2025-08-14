@@ -4,7 +4,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import Select
-#from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.common.action_chains import ActionChains
 from faker import Faker
 
 driver = webdriver.Chrome() #initialized webdriver
@@ -48,7 +48,7 @@ wait.until(EC.element_to_be_clickable((By.XPATH, "//a[text()='Login here']"))).c
 
 wait.until(EC.visibility_of_element_located((By.XPATH, "//input[@id='userEmail']")))
 
-time.sleep(5)
+time.sleep(2)
 
 # Fill login form
 driver.find_element(By.XPATH, "//input[@id='userEmail']").send_keys(email)
@@ -56,11 +56,22 @@ driver.find_element(By.XPATH, "//input[@id='userPassword']").send_keys(password)
 
 # Click login button
 wait.until(EC.element_to_be_clickable((By.ID, "login"))).click()
-driver.refresh()
 
 time.sleep(20)
 
+element_to_hover = driver.find_element(By.XPATH, "\\button[contains(@class,'btn-custom')]") 
+actions = ActionChains(driver)
+
+actions.move_to_element(element_to_hover).perform()
+
+# Optional: After hover, you can perform another action, like clicking or waiting for an element to appear
+wait.until(EC.element_to_be_clickable((By.XPATH, "\\button[contains(@class,'btn-custom')]"))).click()
+
+
+
 driver.quit()
+
+
 
 
 
