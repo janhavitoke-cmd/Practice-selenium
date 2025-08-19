@@ -1,0 +1,10 @@
+fname = ["apple", "Mango", "Banana"]
+vname = ["pumpkin", "Okra"]
+
+def func():
+    fruits = [f"Fruit name: {f}" for f in fname]
+    vegetables = [f"Vegetable name: {v}" for v in vname]
+    print(fruits)
+    print(vegetables)
+
+func()
