@@ -1,0 +1,8 @@
+a= 2000
+b=3200
+if b>a:
+ print("B is greater")
+elif b==a:
+ print("Both are equal")
+else:
+ print ("B is smaller")
