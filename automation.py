@@ -67,8 +67,6 @@ actions.move_to_element(element_to_hover).perform()
 # Optional: After hover, you can perform another action, like clicking or waiting for an element to appear
 wait.until(EC.element_to_be_clickable((By.XPATH, "\\button[contains(@class,'btn-custom')]"))).click()
 
-
-
 driver.quit()
 
 
