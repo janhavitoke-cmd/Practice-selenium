@@ -4,6 +4,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import Select
+from selenium.webdriver.common.action_chains import ActionChains
 from faker import Faker
 
 driver = webdriver.Chrome() #initialized webdriver
@@ -17,7 +18,7 @@ firstname = fake.first_name()
 lastname =  fake.last_name()
 email = fake.email()
 phone = str(fake.random_number(digits=10, fix_len=True))
-password = fake.password(length=10, special_chars=True, digits=True, upper_case=True, lower_case=True)
+password = fake.password(length=12, special_chars=True, digits=True, upper_case=True, lower_case=True)
 confpass = password
 
 wait = WebDriverWait(driver,20)
@@ -58,8 +59,19 @@ wait.until(EC.element_to_be_clickable((By.ID, "login"))).click()
 
 time.sleep(20)
 
+element_to_hover = driver.find_element(By.XPATH, "\\button[contains(@class,'btn-custom')]") 
+actions = ActionChains(driver)
+
+actions.move_to_element(element_to_hover).perform()
+
+# Optional: After hover, you can perform another action, like clicking or waiting for an element to appear
+wait.until(EC.element_to_be_clickable((By.XPATH, "\\button[contains(@class,'btn-custom')]"))).click()
+
+
 
 driver.quit()
+
+
 
 
 
