@@ -56,18 +56,18 @@ driver.find_element(By.XPATH, "//input[@id='userPassword']").send_keys(password)
 
 # Click login button
 wait.until(EC.element_to_be_clickable((By.ID, "login"))).click()
-
 time.sleep(20)
 
-element_to_hover = driver.find_element(By.XPATH, "\\button[contains(@class,'btn-custom')]") 
-actions = ActionChains(driver)
-
-actions.move_to_element(element_to_hover).perform()
-
-# Optional: After hover, you can perform another action, like clicking or waiting for an element to appear
-wait.until(EC.element_to_be_clickable((By.XPATH, "\\button[contains(@class,'btn-custom')]"))).click()
-
-
+#homepage
+"""
+orders_btn = wait.until(EC.element_to_be_clickable((By.XPATH, "(//button[@routerlink='/dashboard/myorders']")))
+orders_btn.click()
+or
+driver.find_element(By.XPATH, "//button[text()='Orders']").click()
+or
+driver.find_element(By.XPATH, "//a[@routerlink='/dashboard/myorders']").click()
+wait.until(EC.element_to_be_clickable(By.XPATH,"//button[@contains(btn btn-custom), value]")
+"""
 
 driver.quit()
 
