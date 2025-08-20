@@ -1,0 +1,34 @@
+
+# public
+class Public:
+ def __init__(self):
+  self.name ="Jigar"
+ def display_name(self):
+  print(self.name)
+obj = Public()
+obj.display_name()
+
+
+#protected
+class Protected:
+ def __init__(self):
+  self._age = 30
+class Subclass (Protected):
+ def display_age(self):
+  print(self._age)
+obj = Subclass()
+obj.display_age()
+
+
+
+#Private
+class Private:
+    def __init__(self):
+        self.__salary = 5000
+    def salary(self):
+        return self.__salary
+obj = Private()
+print(obj.salary())
+
+
+
