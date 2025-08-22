@@ -1,0 +1,192 @@
+#variable
+x = 4
+x = 10
+x = "Hello"
+print (x)
+
+#variable casting
+x = int(4)
+y = float(10.323)
+z = str("Hello")
+print (x,y,z)
+
+#variable datatype
+x = int(4)
+y = float(10.323)
+z = str("Hello")
+print (type(x))
+print (type(y))
+print (type(z))
+
+#assign single value in multiple variable
+x=y=z = 2000
+print(x)
+print(y)
+print(type(z))
+
+#assign multiple variables
+x,y,z = "apple", "mango","banana"
+print(x)
+print(y)
+print(z,type(z))
+
+#output variable
+x = 20
+y = 30
+print (x+y)
+
+#global variable
+x = "Hello World"
+def myfunc():
+   print("welcome everyone " + x)
+myfunc()
+print(x + " from outside a function")
+
+#slicing string
+x = "Hello World"
+print(x[2:7])
+print(x[:5])
+print(x[2:])
+print(x[-7:-1])
+
+#modify string 
+x = " Hello World "
+print(x.upper())
+print(x.lower())
+print(x.strip())
+print(x.replace("H","E"))
+print(x.split("o"))
+
+#fstring
+name = "joy"
+txt = f"hello my name is {name}"
+print(txt)
+
+#dictionary-update
+thisdict =	{
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+thisdict.update({"color":"red"})
+print(thisdict)
+
+#dictionary-Add
+thisdict =	{
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+thisdict["color"] = "red"
+print(thisdict)
+
+
+#remove list duplicate
+x = (1,2,3,3,5,5,5,5)
+x = list(dict.fromkeys(x))
+print(x)
+
+#reverse string 
+txt = "Hello World"[::-1]
+print(txt)
+
+#ifelse
+a = 20
+b = 30
+if a>b:
+   print("a is greater")
+elif a==b:
+   print("both equal")
+else:
+   print("b is greater")
+
+#lambda
+x = lambda a,b,c:a*b+c
+print(x(20,4,30))
+
+#init method()
+class Person:
+   def __init__(self,name,age):
+      self.name = name
+      self.age = age
+P1 = Person("John",20)
+print(P1.name)
+
+#method
+class Person:
+   def __init__(self,name,age):
+      self.name = name
+      self.age = age
+
+   def msg(self):
+      print( self.name,"methods are function present inside the class")
+P1= Person("definition:",27)
+P1.msg()
+
+
+#parent child inheritance
+class Person:
+   def __init__(self,fname,lname):
+      self.firstname = fname
+      self.lastname = lname
+
+   def msg(self):
+      print(self.firstname,self.lastname + " name")
+
+class Persondetail(Person):
+   def __init__(self, fname, lname):
+    Person.__init__(self, fname, lname)
+
+P1= Persondetail("Janhavi","Toke")
+P1.msg()
+
+#super class in parent child
+class Person:
+   def __init__(self,fname,lname):
+      self.firstname = fname
+      self.lastname = lname
+
+   def msg(self):
+      print(self.firstname,self.lastname + " name")
+
+class Persondetail(Person):
+   def __init__(self, fname, lname,year):
+    super().__init__(fname, lname)
+    #adding properties
+    self.graduationyr = year
+    #adding a method in a child class
+   def welcome(self):
+      print("hello world my name is:", self.firstname)
+
+P1= Persondetail("Janhavi","Toke",1999)
+P1.msg()
+print(P1.graduationyr, P1.firstname,P1.lastname)
+P1.welcome()
+
+#iterators
+#simple loop
+fruits = ["apple","mango","banana","strawberry"]
+for x in fruits:
+   print(x)
+
+#iterator:
+
+class Person:
+   def __iter__(self):
+      self.a = 1
+      return self
+   
+   def __next__(self):
+      if self.a <= 5:  # limit the iteration
+         x = self.a
+         self.a += 1
+         return x
+      else:
+         raise StopIteration  # stop when finished
+
+myclass = Person()
+myiter = iter(myclass)
+
+for n in myclass:
+ print(n)
+
